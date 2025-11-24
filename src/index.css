@@ -157,6 +157,62 @@ All colors MUST be HSL.
     transform: translateY(-8px);
     box-shadow: 0 20px 40px -15px hsl(var(--warm-shadow) / 0.3);
   }
+
+  /* Added animation and styles for coffee logo advanced effect */
+
+  @keyframes floatPulse {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      filter: drop-shadow(0 0 4px hsl(var(--accent)) );
+      opacity: 1;
+    }
+
+    50% {
+      transform: translateY(-10px) scale(1.05);
+      filter: drop-shadow(0 0 10px hsl(var(--accent)));
+      opacity: 0.9;
+    }
+  }
+
+  .coffee-logo-advanced {
+    animation: floatPulse 4s ease-in-out infinite;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 25px -5px hsl(var(--warm-shadow) / 0.4);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+  }
+
+  .coffee-logo-advanced:hover {
+    transform: scale(1.1);
+    box-shadow: 0 30px 50px -10px hsl(var(--accent) / 0.7);
+    filter: drop-shadow(0 0 15px hsl(var(--accent)));
+    transition: var(--transition-smooth);
+  }
+
+  .coffee-logo-glow-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: var(--radius);
+  }
+
+  .coffee-logo-glow-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -15%;
+    left: -15%;
+    width: 130%;
+    height: 130%;
+    border-radius: var(--radius);
+    background: radial-gradient(circle, hsl(var(--accent) / 0.4), transparent 70%);
+    filter: blur(10px);
+    opacity: 0.8;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  .coffee-logo-glow-wrapper:hover::before {
+    opacity: 1;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');

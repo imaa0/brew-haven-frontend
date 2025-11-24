@@ -34,7 +34,6 @@ const Gallery = () => {
               className="group relative overflow-hidden rounded-xl aspect-[4/3] hover-lift"
               style={{
                 animationDelay: `${index * 0.1}s`,
-                opacity: 0,
               }}
             >
               <img

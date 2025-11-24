@@ -50,7 +50,6 @@ const Menu = () => {
               className="bg-card border border-border rounded-xl p-8 hover-lift"
               style={{
                 animationDelay: `${categoryIndex * 0.15}s`,
-                opacity: 0,
               }}
             >
               <div className="flex items-center justify-center mb-6">
