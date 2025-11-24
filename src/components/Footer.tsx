@@ -32,7 +32,7 @@ const Footer = () => {
                   href="tel:+15035551234"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  (070) 396 9922
+                  (070) 123-4567
                 </a>
               </div>
               <div className="flex items-center space-x-3">
