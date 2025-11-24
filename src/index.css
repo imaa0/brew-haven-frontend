@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Café Color Palette - Warm, Earthy Tones */
+    --background: 35 25% 96%;
+    --foreground: 25 25% 15%;
+
+    --card: 35 30% 98%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 35 30% 98%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Rich Coffee Brown */
+    --primary: 25 40% 25%;
+    --primary-foreground: 35 30% 98%;
+
+    /* Warm Cream */
+    --secondary: 35 20% 90%;
+    --secondary-foreground: 25 40% 25%;
+
+    /* Soft Muted Tones */
+    --muted: 35 15% 88%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Caramel Accent */
+    --accent: 30 45% 60%;
+    --accent-foreground: 35 30% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 35 30% 98%;
+
+    --border: 35 12% 85%;
+    --input: 35 12% 85%;
+    --ring: 25 40% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom Café Tokens */
+    --coffee-dark: 25 50% 20%;
+    --coffee-medium: 30 40% 40%;
+    --coffee-light: 35 35% 75%;
+    --cream: 35 25% 95%;
+    --warm-shadow: 25 20% 40%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(25 40% 25%) 0%, hsl(30 40% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(35 30% 98%) 0%, hsl(35 20% 94%) 100%);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 25 30% 12%;
+    --foreground: 35 25% 95%;
+
+    --card: 25 35% 15%;
+    --card-foreground: 35 25% 95%;
+
+    --popover: 25 35% 15%;
+    --popover-foreground: 35 25% 95%;
+
+    --primary: 35 30% 85%;
+    --primary-foreground: 25 40% 20%;
+
+    --secondary: 25 25% 22%;
+    --secondary-foreground: 35 25% 95%;
+
+    --muted: 25 20% 20%;
+    --muted-foreground: 35 15% 65%;
+
+    --accent: 30 45% 55%;
+    --accent-foreground: 35 30% 98%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 35 25% 95%;
+
+    --border: 25 20% 25%;
+    --input: 25 20% 25%;
+    --ring: 35 30% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px hsl(var(--warm-shadow) / 0.3);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
